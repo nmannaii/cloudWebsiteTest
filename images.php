@@ -12,12 +12,12 @@
 <body>
     <div class="img-container">
         <?php
-            $db = new PDO('mysql:host=localhost;dbname=images', 'root', '');
+            $db = new PDO('mysql:host=phpmyadmin.cmosonfcmrx6.eu-west-1.rds.amazonaws.com;dbname=images', 'root', 'rootroot');
 
             $getImages = $db->query("SELECT filename FROM images");
             $Imageslist = $getImages->fetchAll();
             for($i = 0; $i < count($Imageslist); $i++) {
-                echo "<div class='image'><img src='uploads/".$Imageslist[$i]['filename']."'></div>";
+                echo "<div class='image'><img src='https://s3-eu-west-1.amazonaws.com/com-rosettahub-default-nejmeddine.mannai/".$Imageslist[$i]['filename']."'></div>";
             }
         ?>
     </div>

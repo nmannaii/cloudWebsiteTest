@@ -15,7 +15,8 @@ $(document).ready(() => {
             cache: false,
             processData: false,
             success: function (response) {
-                if (response === 'Ok') {
+                console.log(response);
+                if (response.endsWith('Ok')) {
                     $("img").addClass("showImg");
                 }
             }
